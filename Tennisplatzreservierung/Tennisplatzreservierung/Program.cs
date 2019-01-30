@@ -16,7 +16,7 @@ namespace Tennisplatzreservierung
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new tenniscourtreservation());
+            Application.Run(new Login());
         }
     }
 }
