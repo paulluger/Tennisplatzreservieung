@@ -8,3 +8,4 @@ C:\Users\Kilian\Documents\Tennisplatzreservieung\Tennisplatzreservierung\Tennisp
 C:\Users\Kilian\Documents\Tennisplatzreservieung\Tennisplatzreservierung\Tennisplatzreservierung\obj\Debug\Tennisplatzreservierung.csproj.GenerateResource.Cache
 C:\Users\Kilian\Documents\Tennisplatzreservieung\Tennisplatzreservierung\Tennisplatzreservierung\obj\Debug\Tennisplatzreservierung.exe
 C:\Users\Kilian\Documents\Tennisplatzreservieung\Tennisplatzreservierung\Tennisplatzreservierung\obj\Debug\Tennisplatzreservierung.pdb
+C:\Users\Kilian\Documents\Tennisplatzreservieung\Tennisplatzreservierung\Tennisplatzreservierung\obj\Debug\Tennisplatzreservierung.Registration.resources
