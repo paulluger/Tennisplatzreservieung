@@ -1,0 +1,44 @@
+create table ranks(
+	RankID int unique not null auto_increment,
+	rank varchar(255) not null,
+	Primary Key (RankID)
+);
+
+create table User (
+	UserID int not null unique auto_increment,
+	Firstname varchar(255) not null,
+	Lastname varchar(255) not null,
+	EMail varchar(255) not null,
+	Password varchar(255) not null,
+	RankID int not null,
+	Gender varchar(255),
+	SkillLevel varchar(255),
+	Age int,
+	Primary Key (UserID),
+	Foreign Key (RankID) References ranks(RankID)
+);
+
+create table Tenniscourt (
+	TenniscourtID int unique not null auto_increment,
+	Description varchar(255),
+	Primary Key (TenniscourtID)
+);
+
+create table ReservationType (
+	RTypeID int unique not null auto_increment,
+	RType varchar(255) not null,
+	Primary Key(RTypeID)
+);
+
+create table Reservations(
+	ReservationID int unique not null auto_increment,
+	TenniscourtID int not null,
+	UserID int not null,
+	starttime datetime not null,
+	duration time not null,
+	RTypeID int not null,
+	Primary Key (ReservationID),
+	Foreign Key (TenniscourtID) References tenniscourt(TenniscourtID),
+	Foreign Key (UserID) References user (UserID),
+	Foreign Key (RTypeID) References reservationtype(RTypeID)
+);
