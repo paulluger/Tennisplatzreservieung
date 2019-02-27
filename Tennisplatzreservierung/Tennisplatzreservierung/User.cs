@@ -69,9 +69,18 @@ namespace Tennisplatzreservierung
             get { return password; }
             set
             {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new ApplicationException("Passwort ist leer!");
+                }
+                else
+                {
+                    password = CreatePasswordHash(value,Salt);
+                }
 
             }
         }
+<<<<<<< HEAD
 
         public string Salt { get { return salt; } set { } }
 
@@ -84,6 +93,8 @@ namespace Tennisplatzreservierung
             return Convert.ToBase64String(buff);
 
         }
+=======
+>>>>>>> 9c13fdfe199d75c67a5e67ea23bf6f3141829f77
         public int Rank
         {
             get { return rank; }
@@ -95,14 +106,47 @@ namespace Tennisplatzreservierung
                     rank = value;
             }
         }
+
         public string Gender { get { return gender; } set { } }
         public string SkillLevel { get { return skillLevel; } set { } }
         public int Age { get { return age; } set { } }
         public int UserID { get { return userID; } set { } }
+        public string Salt
+        {
+            get { return salt; }
+            set
+            {
+                //salt = CreateSalt(16);
+            }
+        }
 
+        private static string CreatePasswordHash(string pwd, string salt)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static string CreateSalt(int size)
+        {
+            RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
+            byte[] buff = new byte[size];
+            rng.GetBytes(buff);
+
+            return Convert.ToBase64String(buff);
+        }
+
+        public User() { }
+        public User(string _firstname, string _lastname, string _email, string _password, int _age, int _rank, string _gender, string _skillevel, string _salt)
+        {
+            FirstName = _firstname;
+            LastName = _lastname;
+            Email = _email;
+            Password = _password;
+            Age = _age;
+            Rank = _rank;
+            Gender = _gender;
+            SkillLevel = _skillevel;
+            Salt = _salt;
+        }
     }
-
-}
-
 }
 
