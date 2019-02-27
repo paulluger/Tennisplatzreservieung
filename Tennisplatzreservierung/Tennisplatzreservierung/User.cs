@@ -5,89 +5,108 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Tennisplatzreservierung
+{
+    class User
     {
-        class User
+        private string firstName;
+        private string lastName;
+        private string email;
+        private string password;
+        private string salt;
+        private int rank;
+        private string gender;
+        private string skillLevel;
+        private int userID;
+        private int age;
+
+        public string FirstName
         {
-            private string firstName;
-            private string lastName;
-            private string email;
-            private string password;
-            private string salt;
-            private int rank;
-            private string gender;
-            private string skillLevel;
-            private int userID;
-            private int age;
+            get { return firstName; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                    throw new ApplicationException("Vorname ist leer!");
+                else
+                    firstName = value;
+            }
+        }
+        public string LastName
+        {
+            get { return lastName; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                    throw new ApplicationException("Nachname ist leer!");
+                else
+                    lastName = value;
+            }
+        }
+        public string Email
+        {
+            get { return email; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new ApplicationException("E-Mail ist leer!");
+                }
 
-            public string FirstName
-            {
-                get { return firstName; }
-                set
+                if (value.Contains("@"))
                 {
-                    if (string.IsNullOrEmpty(value))
-                        throw new ApplicationException("Vorname ist leer!");
-                    else
-                        firstName = value;
+                    string[] splitEmail = value.Split('@');
+                    if (splitEmail[2].Contains("."))
+                        email = value;
+                }
+                else
+                {
+                    throw new ApplicationException("E-Mail ist nicht gültig!");
                 }
             }
-            public string LastName
+        }
+        public string Password
+        {
+            get { return password; }
+            set
             {
-                get { return lastName; }
-                set
-                {
-                    if (string.IsNullOrEmpty(value))
-                        throw new ApplicationException("Nachname ist leer!");
-                    else
-                        lastName = value;
-                }
-            }
-            public string Email
-            {
-                get { return email; }
-                set
-                {
-                    if (string.IsNullOrEmpty(value))
-                    {
-                        throw new ApplicationException("E-Mail ist leer!");
-                    }
-
-                    if (value.Contains("@"))
-                    {
-                        string[] splitEmail = value.Split('@');
-                        if (splitEmail[2].Contains("."))
-                            email = value;
-                    }
-                    else
-                    {
-                        throw new ApplicationException("E-Mail ist nicht gültig!");
-                    }
-                }
-            }
-            public string Password
-            {
-                get { return password; }
-                set
+                if (string.IsNullOrEmpty(value))
+                    throw new ApplicationException("Passwort ist leer!");
+                else
                 {
 
                 }
-            }
-            public string Salt { get { return salt; } set { } }
-            public int Rank
-            {
-                get { return rank; }
-                set
-                {
-                    if (value < 0 || value > 2)
-                        throw new ApplicationException("Mögliche Ränge sind 0...nicht verifiziert 1...Mitglied 2...Admin!");
-                    else
-                        rank = value;
-                }
-            }
-            public string Gender { get { return gender; } set { } }
-            public string SkillLevel { get { return skillLevel; } set { } }
-            public int Age { get { return age; } set { } }
-            public int UserID { get { return userID; } set { } }
 
+            }
+        }
+        public int Rank
+        {
+            get { return rank; }
+            set
+            {
+                if (value < 0 || value > 2)
+                    throw new ApplicationException("Mögliche Ränge sind 0...nicht verifiziert 1...Mitglied 2...Admin!");
+                else
+                    rank = value;
+            }
+        }
+
+        public string Gender { get { return gender; } set { } }
+        public string SkillLevel { get { return skillLevel; } set { } }
+        public int Age { get { return age; } set { } }
+        public int UserID { get { return userID; } set { } }
+        public string Salt { get { return salt; } set { } }
+
+        public User() { }
+        public User(string _firstname, string _lastname, string _email, string _password, int _age, int _rank, string _gender, string _skillevel, string _salt)
+        {
+            FirstName = _firstname;
+            LastName = _lastname;
+            Email = _email;
+            Password = _password;
+            Age = _age;
+            Rank = _rank;
+            Gender = _gender;
+            SkillLevel = _skillevel;
+            Salt = _salt;
         }
 
     }
