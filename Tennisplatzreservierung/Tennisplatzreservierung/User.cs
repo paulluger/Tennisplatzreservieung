@@ -73,10 +73,6 @@ namespace Tennisplatzreservierung
             }
         }
 
-        private static string CreatePasswordHash(string pwd, string salt)
-        {
-          
-        }
         public string Salt { get { return salt; } set { } }
 
         private static string CreateSalt(int size)
