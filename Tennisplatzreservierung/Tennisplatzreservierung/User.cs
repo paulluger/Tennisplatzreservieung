@@ -75,7 +75,7 @@ namespace Tennisplatzreservierung
                 }
                 else
                 {
-                    throw new ApplicationException("E-Mail ist nicht gültig!");
+                    password = CreatePasswordHash(value,Salt);
                 }
 
             }
@@ -101,7 +101,7 @@ namespace Tennisplatzreservierung
             get { return salt; }
             set
             {
-
+                //salt = CreateSalt(16);
             }
         }
 
