@@ -1,0 +1,17 @@
+Zweimüller:
+ERM-Model skizziren mit Kili; Klassendesign, User, Reservation, Registration mit Verschlüsselung
+Registration und Login Tests;
+
+Truong: 
+Datenbank erstellen; Windows Form bearbeiten; Connection Class; Login mit Verschlüsselung
+Refaktoring User Klasse; Verification Form;
+
+Luger:
+ERM Model mit DBDesigner 4 fertiggestellt; SCRUM Zusammenfassung für Matura (mundl); Refaktoring User Klasse
+Product Backlog überarbeitet; 
+
+Allgemein:
+Aufgaben Brainstorming; Planning Poker; Visual Studio Projektverwirklickung begonnen;
+
+Nächste Schritte: 
+Kalender; Reservierungssystem; ERM Zusammenfassung; 
